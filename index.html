@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>devCodeCamp &middot; Most Wanted</title>
+  </head>
+  <body>
+     
+    <form id="nameForm">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" value="Billy"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" value="Bob"><br><br>
+        <input type="button" onclick="searchByName()" value="Submit">
+    </form> 
+    <table class="table"id = "myTable" >
+         
+      <thead>
+        <tr>
+          <th scope="col">Picture</th>
+          <th scope="col" >First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Age</th>
+          <th scope="col">Height</th>
+          <th scope="col">Weight</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- <tr>
+          <th scope="row">Picture goes here</th>
+          <td ></td>
+          <td>last name goes here</td>
+          <td>Age goes here</td>
+          <td>Height Goes here</td>
+          <td>Weight Goes here</td>
+        </tr> -->
+      </tbody>
+    </table>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
