@@ -1,3 +1,4 @@
+// You may modify this for testing purposes.
 const people = [
 	{
 		"id": 272822514,
@@ -76,26 +77,7 @@ const people = [
 		"age": 30,
 		"height": 76,
 		"weight": 205,
+
 	}
+
 ];
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
