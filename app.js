@@ -7,10 +7,16 @@ function searchByName(){
 
     // "people" is coming from the data.js file. We have access to it within this JavaScript file.
     let filteredPeople = people.filter(function (person) {
+        while(person.firstName === firstNameInput && person.lastName === lastNameInput){
+            return true;
+            
+        }
+
         if(person.firstName === firstNameInput || person.lastName === lastNameInput){
             return true;
         }
-        return false;
+
+        else{ return false;}
     });
     function addRow(){
         console.log(filteredPeople);
@@ -22,16 +28,33 @@ function searchByName(){
         let newCell3 = tableRow1.insertCell(2);
         let newCell4 = tableRow1.insertCell(3);
         let newCell5 = tableRow1.insertCell(4);
+        let newCell6 = tableRow1.insertCell(5);
+        let newCell7 = tableRow1.insertCell(6);
+        let newCell8 = tableRow1.insertCell(7);
+        let newCell9 = tableRow1.insertCell(8);
+        let newCell10 = tableRow1.insertCell(9);
+        let peopleId = document.createTextNode(filteredPeople[i].id);
         let firstNames = document.createTextNode(filteredPeople[i].firstName);
         let lastNames =document.createTextNode(filteredPeople[i].lastName);
-        let personAge = document.createTextNode(filteredPeople[i].age);
+        let personGender = document.createTextNode(filteredPeople[i].gender);
+        let personAge = document.createTextNode(filteredPeople[i].dob);
         let personHeight =document.createTextNode(filteredPeople[i].height);
-        let personWeight =document.createTextNode(filteredPeople[i].weight)
-        newCell1.appendChild(firstNames);
-        newCell2.appendChild(lastNames);
-        newCell3.appendChild(personAge);
-        newCell4.appendChild(personHeight);
-        newCell5.appendChild(personWeight);
+        let personWeight =document.createTextNode(filteredPeople[i].weight);
+        let personEyeColor =document.createTextNode(filteredPeople[i].eyeColor);
+        let personParent =document.createTextNode(filteredPeople[i].parents);
+        let spouse =document.createTextNode(filteredPeople[i].currentSpouse);
+        
+        newCell1.appendChild(peopleId);
+        newCell2.appendChild(firstNames);
+        newCell3.appendChild(lastNames);
+        newCell4.appendChild(personGender);
+        newCell5.appendChild(personAge);
+        newCell6.appendChild(personHeight);
+        newCell7.appendChild(personWeight);
+        newCell8.appendChild(personEyeColor);
+        newCell9.appendChild(personParent);
+        newCell10.appendChild(spouse);
+
         }
     }
     addRow();
