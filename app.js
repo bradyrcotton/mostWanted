@@ -1,5 +1,46 @@
 'use strict';
 
+    function addRow(){
+        
+        for (let i=0; i<people.length; i++){
+        let tableRef = document.getElementById("myTable");
+        let tableRow1 = tableRef.insertRow(1);
+        let newCell1 = tableRow1.insertCell(0);
+        let newCell2 = tableRow1.insertCell(1);
+        let newCell3 = tableRow1.insertCell(2);
+        let newCell4 = tableRow1.insertCell(3);
+        let newCell5 = tableRow1.insertCell(4);
+        let newCell6 = tableRow1.insertCell(5);
+        let newCell7 = tableRow1.insertCell(6);
+        let newCell8 = tableRow1.insertCell(7);
+        let newCell9 = tableRow1.insertCell(8);
+        let newCell10 = tableRow1.insertCell(9);
+        let peopleId = document.createTextNode(people[i].id);
+        let firstNames = document.createTextNode(people[i].firstName);
+        let lastNames =document.createTextNode(people[i].lastName);
+        let personGender = document.createTextNode(people[i].gender);
+        let personAge = document.createTextNode(people[i].dob);
+        let personHeight =document.createTextNode(people[i].height);
+        let personWeight =document.createTextNode(people[i].weight);
+        let personEyeColor =document.createTextNode(people[i].eyeColor);
+        let personParent =document.createTextNode(people[i].parents);
+        let spouse =document.createTextNode(people[i].currentSpouse);
+        
+        newCell1.appendChild(peopleId);
+        newCell2.appendChild(firstNames);
+        newCell3.appendChild(lastNames);
+        newCell4.appendChild(personGender);
+        newCell5.appendChild(personAge);
+        newCell6.appendChild(personHeight);
+        newCell7.appendChild(personWeight);
+        newCell8.appendChild(personEyeColor);
+        newCell9.appendChild(personParent);
+        newCell10.appendChild(spouse);
+
+        }
+    }
+    addRow();
+
 function searchByName(){
     // Grabbing the values from our nameForm form and inputs.
     let firstNameInput = document.forms['nameForm']['fname'].value;
@@ -43,6 +84,8 @@ function searchByName(){
         let personEyeColor =document.createTextNode(filteredPeople[i].eyeColor);
         let personParent =document.createTextNode(filteredPeople[i].parents);
         let spouse =document.createTextNode(filteredPeople[i].currentSpouse);
+        
+
         
         newCell1.appendChild(peopleId);
         newCell2.appendChild(firstNames);
