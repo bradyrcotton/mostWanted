@@ -51,6 +51,23 @@ function searchByName(){
     let heightInput = document.forms['nameForm']['height'].value;
     let weightInput = document.forms['nameForm']['weight'].value;
     let eyeColorInput = document.forms['nameForm']['eyeColor'].value;
+
+   let inputs =[];
+   inputs.push(idInput);
+   inputs.push(firstNameInput);
+   inputs.push(lastNameInput);
+   inputs.push(genderInput);
+   inputs.push(ageInput);
+   inputs.push(heightInput);
+   inputs.push(weightInput);
+   inputs.push(eyeColorInput);
+   
+   let filteredInputs = inputs.filter(function (value) {
+       return value;
+
+  
+   });
+   console.log(filteredInputs);
     
     // "people" is coming from the data.js file. We have access to it within this JavaScript file.
     
@@ -64,17 +81,7 @@ function searchByName(){
         else{ return false;}
     });
 
-//     function deleteRows(){
-//         if
-//     }
-// }
-    // for(let i=0;i < filteredPeople.length;i++){
-    //     if (tableRef[i] != filteredPeople[i]){
 
-        
-    //     document.getElementById("myTable").deleteRow(i);
-    //     }
-    // }
    function replaceTable(){
        for(let i=0;i<people.length ;i++){
         
@@ -124,27 +131,4 @@ addNewRow();
 }
 replaceTable();
 }
-    // for(let i=0;i<filteredPeople.length;i++){
-    //     console.log(filteredPeople["firstName"]);
-    // }
-    // // Rather than console logging, you need to append the filteredPeople to a table.
-    // if(filteredPeople.length > 0){
-    //     let table = document.createElement('table');
-    //     let row = table.insertRow();
-    //     let cell = row.insertCell();
-    //     cell.textContent = filteredPeople[0].firstName;
-    //     let newCell=row.insertCell();
-    //     newCell.textContent = filteredPeople[0].lastName;
-    //     document.body.appendChild(table);
-    // }else{
-    //     alert('Sorry, looks like there is no one with that name.');
-    // }
-//     function addRow(myTable){
-//         let tableRef = document.getElementById("myTable");
-//         let newRow = tableRef.insertRow(1);
-//         let newCell = newRow.insertCell(0);
-//         let newText = document.createTextNode(filteredPeople[0].firstName);
-//         newCell.appendChild(newText);
-//     }
-//     addRow(myTable);
-// }
+  
