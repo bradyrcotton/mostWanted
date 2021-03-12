@@ -43,17 +43,22 @@
 
 function searchByName(){
     // Grabbing the values from our nameForm form and inputs.
-   
+    let idInput = document.forms['nameForm']['peopleId'].value
     let firstNameInput = document.forms['nameForm']['fname'].value;
     let lastNameInput = document.forms['nameForm']['lname'].value;
-    let idInput = document.forms['nameForm']['peopleId'].value
+    let genderInput = document.forms['nameForm']['gender'].value;
+    let ageInput = document.forms['nameForm']['age'].value;
+    let heightInput = document.forms['nameForm']['height'].value;
+    let weightInput = document.forms['nameForm']['weight'].value;
+    let eyeColorInput = document.forms['nameForm']['eyeColor'].value;
+    
     // "people" is coming from the data.js file. We have access to it within this JavaScript file.
     
     let filteredPeople = people.filter(function (person) {
-        while(person.firstName === firstNameInput && person.lastName === lastNameInput && person.id === idInput){
+        while(person.id === idInput && person.firstName === firstNameInput && person.lastName === lastNameInput && person.gender === genderInput && person.dob === ageInput && person.height === heightInput && person.weight === weightInput && person.eyeColor === eyeColorInput){
             return true;
         }
-        if(person.firstName === firstNameInput || person.lastName === lastNameInput){
+        if(person.id === idInput || person.firstName === firstNameInput || person.lastName === lastNameInput || person.gender === genderInput || person.dob === ageInput || person.height === heightInput || person.weight === weightInput || person.eyeColor === eyeColorInput){
             return true;
         }
         else{ return false;}
