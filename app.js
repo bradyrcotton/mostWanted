@@ -45,18 +45,15 @@ function searchByName(){
     // Grabbing the values from our nameForm form and inputs.
     let firstNameInput = document.forms['nameForm']['fname'].value;
     let lastNameInput = document.forms['nameForm']['lname'].value;
-
     // "people" is coming from the data.js file. We have access to it within this JavaScript file.
+    let continueLoopPeople = true;
     let filteredPeople = people.filter(function (person) {
         while(person.firstName === firstNameInput && person.lastName === lastNameInput){
             return true;
-            
         }
-
         if(person.firstName === firstNameInput || person.lastName === lastNameInput){
             return true;
         }
-
         else{ return false;}
     });
     function addRow(){
@@ -97,14 +94,10 @@ function searchByName(){
         newCell8.appendChild(personEyeColor);
         newCell9.appendChild(personParent);
         newCell10.appendChild(spouse);
-
         }
     }
     addRow();
-    
-
 }
-
     // for(let i=0;i<filteredPeople.length;i++){
     //     console.log(filteredPeople["firstName"]);
     // }
@@ -117,8 +110,6 @@ function searchByName(){
     //     let newCell=row.insertCell();
     //     newCell.textContent = filteredPeople[0].lastName;
     //     document.body.appendChild(table);
-        
-        
     // }else{
     //     alert('Sorry, looks like there is no one with that name.');
     // }
