@@ -72,13 +72,20 @@ function searchByName(){
     // "people" is coming from the data.js file. We have access to it within this JavaScript file.
     
     let filteredPeople = people.filter(function (person) {
-        while(person.id === idInput && person.firstName === firstNameInput && person.lastName === lastNameInput && person.gender === genderInput && person.dob === ageInput && person.height === heightInput && person.weight === weightInput && person.eyeColor === eyeColorInput){
-            return true;
+        let j =0;
+        for (let i=0; i<people.length;i++){
+            if (person.id === filteredInputs[j] || person.firstName=== filteredInputs[j]  || person.lastName === filteredInputs[j] || person.gender === filteredInputs[j] || person.dob === filteredInputs[j] || person.height === filteredInputs[j] || person.weight === filteredInputs[j] || person.eyeColor === filteredInputs[j]){
+                j++;
+                if(person.id === filteredInputs[j] || person.firstName=== filteredInputs[j]  || person.lastName === filteredInputs[j] || person.gender === filteredInputs[j] || person.dob === filteredInputs[j] || person.height === filteredInputs[j] || person.weight === filteredInputs[j] || person.eyeColor === filteredInputs[j]){
+                    return true;
+                }
+                
+
+            }
+            else{ return false;}
         }
-        if(person.id === idInput || person.firstName === firstNameInput || person.lastName === lastNameInput || person.gender === genderInput || person.dob === ageInput || person.height === heightInput || person.weight === weightInput || person.eyeColor === eyeColorInput){
-            return true;
-        }
-        else{ return false;}
+       
+        
     });
 
 
