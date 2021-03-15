@@ -142,7 +142,7 @@ const people = [
 		"weight": 118,
 		"eyeColor": "brown",
 		"occupation": "programmer",
-		"parents": [401222887],
+		"parents": [629807187,464142841],
 		"currentSpouse": 294874671
 	},
 	{
@@ -155,7 +155,7 @@ const people = [
 		"weight": 179,
 		"eyeColor": "blue",
 		"occupation": "nurse",
-		"parents": [401222887],
+		"parents": [401222887,272822514],
 		"currentSpouse": 159819275
 	},
 	{
@@ -168,7 +168,7 @@ const people = [
 		"weight": 156,
 		"eyeColor": "blue",
 		"occupation": "assistant",
-		"parents": [409574486, 260451248],
+		"parents": [401222887,272822514],
 		"currentSpouse": 951747547
 	},
 	{
@@ -181,7 +181,7 @@ const people = [
 		"weight": 235,
 		"eyeColor": "hazel",
 		"occupation": "landscaper",
-		"parents": [629807187, 464142841],
+		"parents":[629807187,464142841],
 		"currentSpouse": null
 	},
 	{
