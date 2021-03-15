@@ -167,9 +167,10 @@ function displayFamilyMembers(){ let filteredPeople = people.filter(function (pe
 
 
 });
+document.getElementById("myTable").deleteRow(1);
     for (let i=0; i< filteredPeople.length; i++){
         for (let j= 0; j < people.length; j++){
-                if (people[j].lastName === filteredPeople[i].lastName){
+                if (people[j].parents[0] === filteredPeople[i].id){
                     let tableRef = document.getElementById("myTable");
                     let tableRow1 = tableRef.insertRow(1);
                     let newCell1 = tableRow1.insertCell(0);
