@@ -24,7 +24,8 @@
         <input type="text" id="weight" name="weight" value=""><br>
       <label for="personEyeColor">Eye Color:</label><br>
         <input type="text" id="eyeColor" name="eyeColor" value="blue"><br>
-      <input type="button" onclick="searchByName()" onclick="replaceTable()" value="Submit">
+      <input type="button" onclick="searchByName();replaceTable();filterPeople();addNewRow()"  value="Submit">
+      <input type="button" onclick="displayFamilyMembers()" value="Display Relatives">
     </form> 
     <table class="table"id = "myTable" >
          
@@ -41,6 +42,8 @@
           <th scope="col">Eye Color</th>
           <th scope="col">Parents</th>
           <th scope="col">Current Spouse</th>
+         
+          
         </tr>
       </thead>
       <tbody>
