@@ -15,6 +15,7 @@ let filteredInputs = [];
         let newCell8 = tableRow1.insertCell(7);
         let newCell9 = tableRow1.insertCell(8);
         let newCell10 = tableRow1.insertCell(9);
+        let newCell11 =tableRow1.insertCell(10);
         let peopleId = document.createTextNode(people[i].id);
         let firstNames = document.createTextNode(people[i].firstName);
         let lastNames =document.createTextNode(people[i].lastName);
@@ -24,6 +25,7 @@ let filteredInputs = [];
         let personWeight =document.createTextNode(people[i].weight);
         let personEyeColor =document.createTextNode(people[i].eyeColor);
         let personParent =document.createTextNode(people[i].parents);
+        let personSiblings =document.createTextNode(people[i].siblings);
         let spouse =document.createTextNode(people[i].currentSpouse);
         
         newCell1.appendChild(peopleId);
@@ -35,7 +37,8 @@ let filteredInputs = [];
         newCell7.appendChild(personWeight);
         newCell8.appendChild(personEyeColor);
         newCell9.appendChild(personParent);
-        newCell10.appendChild(spouse);
+        newCell10.appendChild(personSiblings);
+        newCell11.appendChild(spouse);
         }
     }
     addRow();
@@ -86,14 +89,14 @@ function searchByName(){
             }
         }
 
-
-            
             else{ return false;}
         }
-
-
+        
     });
-
+    if(filteredPeople.length === 0){
+        alert("There is noone that matches that criteria. *Note* names are case sesitive!");
+        window.location.reload();
+    }
    
    function replaceTable(){
        for(let i=0;i<people.length ;i++){
@@ -115,6 +118,7 @@ function searchByName(){
         let newCell8 = tableRow1.insertCell(7);
         let newCell9 = tableRow1.insertCell(8);
         let newCell10 = tableRow1.insertCell(9);
+        let newCell11 = tableRow1.insertCell(10);
         let peopleId = document.createTextNode(filteredPeople[i].id);
         let firstNames = document.createTextNode(filteredPeople[i].firstName);
         let lastNames =document.createTextNode(filteredPeople[i].lastName);
@@ -124,6 +128,7 @@ function searchByName(){
         let personWeight =document.createTextNode(filteredPeople[i].weight);
         let personEyeColor =document.createTextNode(filteredPeople[i].eyeColor);
         let personParent =document.createTextNode(filteredPeople[i].parents);
+        let personSiblings =document.createTextNode(filteredPeople[i].siblings)
         let spouse =document.createTextNode(filteredPeople[i].currentSpouse);
         
         
@@ -136,7 +141,8 @@ function searchByName(){
         newCell7.appendChild(personWeight);
         newCell8.appendChild(personEyeColor);
         newCell9.appendChild(personParent);
-        newCell10.appendChild(spouse);
+        newCell10.appendChild(personSiblings);
+        newCell11.appendChild(spouse);
         }
     }
 addNewRow();
@@ -146,6 +152,7 @@ replaceTable();
 function displayFamilyMembers(){ let filteredPeople = people.filter(function (person) {
     let j =0;
     for (let i=0; i<people.length;i++){
+      
         if(filteredInputs.length>1){
         if (person.id === filteredInputs[j] || person.firstName=== filteredInputs[j]  || person.lastName === filteredInputs[j] || person.gender === filteredInputs[j] || person.dob === filteredInputs[j] || person.height === filteredInputs[j] || person.weight === filteredInputs[j] || person.eyeColor === filteredInputs[j]){
             j++;
@@ -160,12 +167,10 @@ function displayFamilyMembers(){ let filteredPeople = people.filter(function (pe
         }
     }
 
-
         
         else{ return false;}
     }
-
-
+  
 });
 document.getElementById("myTable").deleteRow(1);
     for (let i=0; i< filteredPeople.length; i++){
@@ -183,6 +188,7 @@ document.getElementById("myTable").deleteRow(1);
                     let newCell8 = tableRow1.insertCell(7);
                     let newCell9 = tableRow1.insertCell(8);
                     let newCell10 = tableRow1.insertCell(9);
+                    let newCell11 = tableRow1.insertCell(10);
                     let peopleId = document.createTextNode(people[j].id);
                     let firstNames = document.createTextNode(people[j].firstName);
                     let lastNames =document.createTextNode(people[j].lastName);
@@ -192,6 +198,7 @@ document.getElementById("myTable").deleteRow(1);
                     let personWeight =document.createTextNode(people[j].weight);
                     let personEyeColor =document.createTextNode(people[j].eyeColor);
                     let personParent =document.createTextNode(people[j].parents);
+                    let personSiblings =document.createTextNode(people[j].siblings);
                     let spouse =document.createTextNode(people[j].currentSpouse);
                     newCell1.appendChild(peopleId);
                     newCell2.appendChild(firstNames);
@@ -202,8 +209,76 @@ document.getElementById("myTable").deleteRow(1);
                     newCell7.appendChild(personWeight);
                     newCell8.appendChild(personEyeColor);
                     newCell9.appendChild(personParent);
-                    newCell10.appendChild(spouse);
+                    newCell10.appendChild(personSiblings);
+                    newCell11.appendChild(spouse);
           }
         }
       }
     }
+    function displayAllFamilyMembers(){ let filteredPeople = people.filter(function (person) {
+        let j =0;
+        for (let i=0; i<people.length;i++){
+            if(filteredInputs.length>1){
+            if (person.id === filteredInputs[j] || person.firstName=== filteredInputs[j]  || person.lastName === filteredInputs[j] || person.gender === filteredInputs[j] || person.dob === filteredInputs[j] || person.height === filteredInputs[j] || person.weight === filteredInputs[j] || person.eyeColor === filteredInputs[j]){
+                j++;
+                if(person.id === filteredInputs[j] || person.firstName=== filteredInputs[j]  || person.lastName === filteredInputs[j] || person.gender === filteredInputs[j] || person.dob === filteredInputs[j] || person.height === filteredInputs[j] || person.weight === filteredInputs[j] || person.eyeColor === filteredInputs[j]){
+                    return true;
+                }
+            }
+        }
+            else if(filteredInputs.length<= 1){
+            if(person.id === filteredInputs[j] || person.firstName=== filteredInputs[j]  || person.lastName === filteredInputs[j] || person.gender === filteredInputs[j] || person.dob === filteredInputs[j] || person.height === filteredInputs[j] || person.weight === filteredInputs[j] || person.eyeColor === filteredInputs[j]){
+                return true;
+            }
+        }
+    
+    
+            
+            else{ return false;}
+        }
+    
+    
+    });
+    document.getElementById("myTable").deleteRow(1);
+        for (let i=0; i< filteredPeople.length; i++){
+            for (let j= 0; j < people.length; j++){
+                    if (people[j].lastName === filteredPeople[i].lastName){
+                        let tableRef = document.getElementById("myTable");
+                        let tableRow1 = tableRef.insertRow(1);
+                        let newCell1 = tableRow1.insertCell(0);
+                        let newCell2 = tableRow1.insertCell(1);
+                        let newCell3 = tableRow1.insertCell(2);
+                        let newCell4 = tableRow1.insertCell(3);
+                        let newCell5 = tableRow1.insertCell(4);
+                        let newCell6 = tableRow1.insertCell(5);
+                        let newCell7 = tableRow1.insertCell(6);
+                        let newCell8 = tableRow1.insertCell(7);
+                        let newCell9 = tableRow1.insertCell(8);
+                        let newCell10 = tableRow1.insertCell(9);
+                        let newCell11 = tableRow1.insertCell(10);
+                        let peopleId = document.createTextNode(people[j].id);
+                        let firstNames = document.createTextNode(people[j].firstName);
+                        let lastNames =document.createTextNode(people[j].lastName);
+                        let personGender = document.createTextNode(people[j].gender);
+                        let personAge = document.createTextNode(people[j].dob);
+                        let personHeight =document.createTextNode(people[j].height);
+                        let personWeight =document.createTextNode(people[j].weight);
+                        let personEyeColor =document.createTextNode(people[j].eyeColor);
+                        let personParent =document.createTextNode(people[j].parents);
+                        let personSiblings =document.createTextNode(people[j].siblings);
+                        let spouse =document.createTextNode(people[j].currentSpouse);
+                        newCell1.appendChild(peopleId);
+                        newCell2.appendChild(firstNames);
+                        newCell3.appendChild(lastNames);
+                        newCell4.appendChild(personGender);
+                        newCell5.appendChild(personAge);
+                        newCell6.appendChild(personHeight);
+                        newCell7.appendChild(personWeight);
+                        newCell8.appendChild(personEyeColor);
+                        newCell9.appendChild(personParent);
+                        newCell10.appendChild(personSiblings);
+                        newCell11.appendChild(spouse);
+              }
+            }
+          }
+        }
