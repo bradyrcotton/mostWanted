@@ -1,4 +1,23 @@
 'use strict';
+function parents(j){
+    if(people[j].parents.length > 0){
+    let bothParents =[];
+    let parents = people[j].parents;
+        for(let k=0; k < people.length; k++){
+            if (parents[0] === people[k].id || parents[1] === people[k].id ){
+                let personParent = people[k].firstName
+                bothParents.push(personParent);
+            
+            
+        }
+        
+        else {};
+        
+    }
+    return bothParents
+    
+} 
+}
 let filteredInputs = [];
     function addRow(){
         
@@ -197,7 +216,8 @@ document.getElementById("myTable").deleteRow(1);
                     let personHeight =document.createTextNode(people[j].height);
                     let personWeight =document.createTextNode(people[j].weight);
                     let personEyeColor =document.createTextNode(people[j].eyeColor);
-                    let personParent =document.createTextNode(people[j].parents);
+                    let personParent =document.createTextNode(parents(j));
+                    // personParent =document.createTextNode(personParent);
                     let personSiblings =document.createTextNode(people[j].siblings);
                     let spouse =document.createTextNode(people[j].currentSpouse);
                     newCell1.appendChild(peopleId);
