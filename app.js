@@ -1,4 +1,5 @@
 'use strict';
+let filteredPeople = [];
 function parents(j){
     if(people[j].parents.length > 0){
     let bothParents =[];
@@ -63,6 +64,8 @@ function spouses(j){
 } 
 else return "";
 }
+
+
 let filteredInputs = [];
     function addRow(){
         
@@ -133,6 +136,7 @@ function searchByName(){
      
   
    });
+   
    console.log(filteredInputs);
     
     // "people" is coming from the data.js file. We have access to it within this JavaScript file.
@@ -158,6 +162,14 @@ function searchByName(){
         }
         
     });
+   
+      
+        
+    
+
+    
+    
+    $:filteredInputs.push(filteredPeople);
     if(filteredPeople.length === 0){
         alert("There is noone that matches that criteria. *Note* names are case sesitive!");
         window.location.reload();
@@ -194,7 +206,7 @@ function searchByName(){
         let personEyeColor =document.createTextNode(filteredPeople[i].eyeColor);
         let personParent =document.createTextNode(parents(i));
         let personSiblings =document.createTextNode(siblings(i));
-        let spouse =document.createTextNode(spouses(i));
+        let spouse =document.createTextNode(spouses2(i));
         
         
         newCell1.appendChild(peopleId);
@@ -213,6 +225,28 @@ function searchByName(){
 addNewRow();
 }
 replaceTable();
+function spouses2(j){
+    if(filteredPeople[j].currentSpouse.length > 0){
+    let mySpouse =[];
+    let spouse = filteredPeople[j].currentSpouse;
+        for(let k=0; k < people.length; k++){
+            
+            for (let l=0;l<spouse.length;l++){
+                if(spouse[l] === people[k].id ){
+                let spouse = people[k].firstName
+                mySpouse.push(spouse);
+                }
+            
+        
+    
+        else {};
+            }
+    }
+    return mySpouse;
+    
+} 
+else return "";
+}
 }
 function displayFamilyMembers(){ let filteredPeople = people.filter(function (person) {
     let j =0;
@@ -264,7 +298,7 @@ document.getElementById("myTable").deleteRow(1);
                     let personEyeColor =document.createTextNode(people[j].eyeColor);
                     let personParent =document.createTextNode(parents(j));
                     let personSiblings =document.createTextNode(siblings(j));
-                    let spouse =document.createTextNode(spouses(j));
+                    
                     newCell1.appendChild(peopleId);
                     newCell2.appendChild(firstNames);
                     newCell3.appendChild(lastNames);
@@ -275,7 +309,7 @@ document.getElementById("myTable").deleteRow(1);
                     newCell8.appendChild(personEyeColor);
                     newCell9.appendChild(personParent);
                     newCell10.appendChild(personSiblings);
-                    newCell11.appendChild(spouse);
+                    
           }
         }
       }
