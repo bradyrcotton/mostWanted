@@ -14,7 +14,8 @@ const people = [
 		"occupation": "programmer",
 		"parents": [],
 		"siblings" : [],
-		"currentSpouse": 401222887
+		"currentSpouse": [401222887],
+		
 	},
 	{
 		"id": 401222887,
@@ -28,7 +29,7 @@ const people = [
 		"occupation": "assistant",
 		"parents": [],
 		"siblings" : [],
-		"currentSpouse": 272822514
+		"currentSpouse": [272822514],
 	},
 	{
 		"id": 409574486,
@@ -42,7 +43,7 @@ const people = [
 		"occupation": "landscaper",
 		"parents": [],
 		"siblings" : [],
-		"currentSpouse": 260451248
+		"currentSpouse": [260451248],
 	},
 	{
 		"id": 260451248,
@@ -56,7 +57,7 @@ const people = [
 		"occupation": "assistant",
 		"parents": [],
 		"siblings" : [],
-		"currentSpouse": 409574486
+		"currentSpouse": [409574486],
 	},
 	{
 		"id": 629807187,
@@ -70,7 +71,7 @@ const people = [
 		"occupation": "nurse",
 		"parents": [],
 		"siblings" : [],
-		"currentSpouse": 464142841
+		"currentSpouse": [464142841],
 	},
 	{
 		"id": 464142841,
@@ -84,7 +85,7 @@ const people = [
 		"occupation": "student",
 		"parents": [],
 		"siblings" : [],
-		"currentSpouse": 629807187
+		"currentSpouse": [629807187],
 	},
 	{
 		"id": 982411429,
@@ -98,7 +99,8 @@ const people = [
 		"occupation": "architect",
 		"parents": [],
 		"siblings" : [],
-		"currentSpouse": 595767575
+		"currentSpouse": [595767575],
+		
 	},
 	{
 		"id": 595767575,
@@ -112,7 +114,7 @@ const people = [
 		"occupation": "architect",
 		"parents": [],
 		"siblings" : [],
-		"currentSpouse": 982411429
+		"currentSpouse": [982411429],
 	},
 	{
 		"id": 693243224,
@@ -126,7 +128,7 @@ const people = [
 		"occupation": "doctor",
 		"parents": [],
 		"siblings" : [],
-		"currentSpouse": 888201200
+		"currentSpouse": [888201200],
 	},
 	{
 		"id": 888201200,
@@ -140,7 +142,7 @@ const people = [
 		"occupation": "landscaper",
 		"parents": [],
 		"siblings" : [],
-		"currentSpouse": 693243224
+		"currentSpouse": [693243224],
 	},
 	{
 		"id": 878013758,
@@ -154,7 +156,7 @@ const people = [
 		"occupation": "programmer",
 		"parents": [629807187,464142841],
 		"siblings" : [34845718,294874671,931247228,],
-		"currentSpouse": null
+		"currentSpouse": "",
 	},
 	{
 		"id": 951747547,
@@ -168,7 +170,7 @@ const people = [
 		"occupation": "nurse",
 		"parents": [401222887,272822514],
 		"siblings" : [159819275],
-		"currentSpouse": null
+		"currentSpouse": "",
 	},
 	{
 		"id": 159819275,
@@ -182,7 +184,7 @@ const people = [
 		"occupation": "assistant",
 		"parents": [401222887,272822514],
 		"siblings" : [951747547],
-		"currentSpouse": null
+		"currentSpouse": "",
 	},
 	{
 		"id": 348457184,
@@ -196,7 +198,7 @@ const people = [
 		"occupation": "landscaper",
 		"parents":[629807187,464142841],
 		"siblings" : [878013758,294874671,931247228],
-		"currentSpouse": null
+		"currentSpouse": "",
 	},
 	{
 		"id": 294874671,
@@ -210,7 +212,7 @@ const people = [
 		"occupation": "doctor",
 		"parents": [629807187, 464142841],
 		"siblings" : [878013758,348457184,931247228],
-		"currentSpouse": null
+		"currentSpouse": "",
 	},
 	{
 		"id": 931247228,
@@ -224,7 +226,7 @@ const people = [
 		"occupation": "landscaper",
 		"parents": [629807187, 464142841],
 		"siblings" : [878013758,348457184,294874671],
-		"currentSpouse": null
+		"currentSpouse": "",
 	},
 	{
 		"id": 822843554,
@@ -238,7 +240,7 @@ const people = [
 		"occupation": "nurse",
 		"parents": [693243224, 888201200],
 		"siblings" : [819168108,969837479,313207561,313997561,313998000],
-		"currentSpouse": null
+		"currentSpouse": "",
 	},
 	{
 		"id": 819168108,
@@ -252,7 +254,7 @@ const people = [
 		"occupation": "politician",
 		"parents": [693243224, 888201200],
 		"siblings" : [822843554,969837479,313207561,313997561,313998000],
-		"currentSpouse": null
+		"currentSpouse": "",
 	},
 	{
 		"id": 969837479,
@@ -266,7 +268,7 @@ const people = [
 		"occupation": "assistant",
 		"parents": [693243224, 888201200],
 		"siblings" : [822843554,819168108,313207561,313997561,313998000],
-		"currentSpouse": null
+		"currentSpouse": "",
 	},
 	{
 		"id": 313207561,
@@ -280,7 +282,7 @@ const people = [
 		"occupation": "assistant",
 		"parents": [693243224, 888201200],
 		"siblings" : [822843554,819168108,969837479,313997561,313998000],
-		"currentSpouse": null
+		"currentSpouse": "",
 	},
 	{
 		"id": 313997561,
@@ -294,7 +296,7 @@ const people = [
 		"occupation": "doctor",
 		"parents": [693243224, 888201200],
 		"siblings" : [822843554,819168108,969837479,313207561,313998000],
-		"currentSpouse": null
+		"currentSpouse": "",
 	},
 	{
 		"id": 313998000,
@@ -308,6 +310,6 @@ const people = [
 		"occupation": "doctor",
 		"parents": [693243224, 888201200],
 		"siblings" : [822843554,819168108,969837479,313207561,313997561],
-		"currentSpouse": null
+		"currentSpouse": "",
 	}
 ];

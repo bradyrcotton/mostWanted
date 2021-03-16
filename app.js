@@ -17,6 +17,51 @@ function parents(j){
     return bothParents
     
 } 
+else return "";
+}
+function siblings(j){
+    if(people[j].siblings.length > 0){
+    let allSiblings =[];
+    let siblings = people[j].siblings;
+        for(let k=0; k < people.length; k++){
+            
+            for (let l=0;l<siblings.length;l++){
+                if(siblings[l] === people[k].id ){
+                let siblings = people[k].firstName
+                allSiblings.push(siblings);
+                }
+            
+        
+    
+        else {};
+            }
+    }
+    return allSiblings;
+    
+} 
+else return "";
+}
+function spouses(j){
+    if(people[j].currentSpouse.length > 0){
+    let mySpouse =[];
+    let spouse = people[j].currentSpouse;
+        for(let k=0; k < people.length; k++){
+            
+            for (let l=0;l<spouse.length;l++){
+                if(spouse[l] === people[k].id ){
+                let spouse = people[k].firstName
+                mySpouse.push(spouse);
+                }
+            
+        
+    
+        else {};
+            }
+    }
+    return mySpouse;
+    
+} 
+else return "";
 }
 let filteredInputs = [];
     function addRow(){
@@ -43,9 +88,10 @@ let filteredInputs = [];
         let personHeight =document.createTextNode(people[i].height);
         let personWeight =document.createTextNode(people[i].weight);
         let personEyeColor =document.createTextNode(people[i].eyeColor);
-        let personParent =document.createTextNode(people[i].parents);
-        let personSiblings =document.createTextNode(people[i].siblings);
-        let spouse =document.createTextNode(people[i].currentSpouse);
+        let personParent =document.createTextNode(parents(i));
+        let personSiblings =document.createTextNode(siblings(i));
+        let spouse =document.createTextNode(spouses(i));
+        
         
         newCell1.appendChild(peopleId);
         newCell2.appendChild(firstNames);
@@ -146,9 +192,9 @@ function searchByName(){
         let personHeight =document.createTextNode(filteredPeople[i].height);
         let personWeight =document.createTextNode(filteredPeople[i].weight);
         let personEyeColor =document.createTextNode(filteredPeople[i].eyeColor);
-        let personParent =document.createTextNode(filteredPeople[i].parents);
-        let personSiblings =document.createTextNode(filteredPeople[i].siblings)
-        let spouse =document.createTextNode(filteredPeople[i].currentSpouse);
+        let personParent =document.createTextNode(parents(i));
+        let personSiblings =document.createTextNode(siblings(i));
+        let spouse =document.createTextNode(spouses(i));
         
         
         newCell1.appendChild(peopleId);
@@ -217,9 +263,8 @@ document.getElementById("myTable").deleteRow(1);
                     let personWeight =document.createTextNode(people[j].weight);
                     let personEyeColor =document.createTextNode(people[j].eyeColor);
                     let personParent =document.createTextNode(parents(j));
-                    // personParent =document.createTextNode(personParent);
-                    let personSiblings =document.createTextNode(people[j].siblings);
-                    let spouse =document.createTextNode(people[j].currentSpouse);
+                    let personSiblings =document.createTextNode(siblings(j));
+                    let spouse =document.createTextNode(spouses(j));
                     newCell1.appendChild(peopleId);
                     newCell2.appendChild(firstNames);
                     newCell3.appendChild(lastNames);
@@ -284,9 +329,9 @@ document.getElementById("myTable").deleteRow(1);
                         let personHeight =document.createTextNode(people[j].height);
                         let personWeight =document.createTextNode(people[j].weight);
                         let personEyeColor =document.createTextNode(people[j].eyeColor);
-                        let personParent =document.createTextNode(people[j].parents);
-                        let personSiblings =document.createTextNode(people[j].siblings);
-                        let spouse =document.createTextNode(people[j].currentSpouse);
+                        let personParent =document.createTextNode(parents(j));
+                        let personSiblings =document.createTextNode(siblings(j));
+                        let spouse =document.createTextNode(spouses(j));
                         newCell1.appendChild(peopleId);
                         newCell2.appendChild(firstNames);
                         newCell3.appendChild(lastNames);
