@@ -16,6 +16,7 @@ const people = [
 		"siblings" : [],
 		"currentSpouse": [401222887],
 		
+		
 	},
 	{
 		"id": 401222887,

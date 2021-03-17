@@ -287,7 +287,6 @@ document.getElementById("myTable").deleteRow(1);
                     let newCell8 = tableRow1.insertCell(7);
                     let newCell9 = tableRow1.insertCell(8);
                     let newCell10 = tableRow1.insertCell(9);
-                    let newCell11 = tableRow1.insertCell(10);
                     let peopleId = document.createTextNode(people[j].id);
                     let firstNames = document.createTextNode(people[j].firstName);
                     let lastNames =document.createTextNode(people[j].lastName);
